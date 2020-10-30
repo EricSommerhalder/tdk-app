@@ -23,11 +23,13 @@
     "@angular/router": "~9.1.9",
     "@dasch-swiss/dsp-js": "^1.0.0-rc.3",
     "@dasch-swiss/dsp-ui": "^1.0.0-rc.2",
+    "@types/openseadragon": "^2.4.5",
     "jdnconvertiblecalendar": "0.0.5",
     "jdnconvertiblecalendardateadapter": "0.0.14",
     "ngx-color-picker": "^10.1.0",
     "openseadragon": "^2.4.2",
     "rxjs": "~6.5.4",
+    "ts-md5": "^1.2.7",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

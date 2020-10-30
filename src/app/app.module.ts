@@ -15,7 +15,6 @@ import {
 import {environment} from '../environments/environment';
 import {KnoraApiConnection} from '@dasch-swiss/dsp-js';
 import { PlaygroundComponent } from './playground/playground.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,8 +27,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     DspCoreModule,
     DspViewerModule,
     DspSearchModule,
-    DspActionModule,
-    NoopAnimationsModule
+    DspActionModule
   ],
   providers: [
     {
