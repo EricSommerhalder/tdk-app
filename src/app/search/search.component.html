@@ -19,10 +19,7 @@
         <textarea #gravField cdkTextareaAutosize cdkAutosizeMinRows="10" cdkAutosizeMaxRows="10" matInput ></textarea>
       </div>
     </div>
-    <a class="searchbutton" mat-button (click)="currentQuery = undefined; createGravfieldQuery(gravField.value);">Search</a>
-    <div *ngIf ="currentQuery">
-      <dsp-list-view [search]="currentQuery" (resourceSelected)="openResource($event)"></dsp-list-view>
-    </div>
+    <a class="searchbutton" mat-button (click)="createGravfieldQuery(gravField.value);">Search</a>
   </div>
 </div>
 <ng-template #prop let-type="type" let-id="id" let-level="level">

@@ -45,7 +45,6 @@ export class SearchComponent implements OnInit, OnDestroy {
   public properties = {};
   public lists = {};
   public formQueryString = '';
-  public currentQuery: SearchParams;
 
   constructor(@Inject(DspApiConnectionToken) private dspApiConnection: KnoraApiConnection, private router: Router, public storage: StorageService) {
   }
@@ -240,10 +239,6 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
   createGravfieldQuery(enteredString: string) {
-    if (this.currentQuery) {
-      this.currentQuery = undefined;
-      return;
-    }
     if (this.formQueryString) {
       enteredString = this.formQueryString + enteredString;
     }
@@ -284,15 +279,7 @@ export class SearchComponent implements OnInit, OnDestroy {
       }
       queryString += '}';
     }
-    this.currentQuery = {
-      query: queryString,
-      mode: 'gravsearch'
-    };
-    console.log(this.currentQuery);
-  }
-
-  openResource(iri: string) {
-    const url: string = 'resource/' + encodeURIComponent(iri);
+    const url: string = 'results/' + encodeURIComponent(queryString);
     this.router.navigateByUrl(url).then(e => {
     });
   }

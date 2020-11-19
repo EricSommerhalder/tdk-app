@@ -25,13 +25,15 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatButtonModule} from '@angular/material/button';
 import { ResourceComponent } from './resource/resource.component';
+import { ResultsComponent } from './results/results.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlaygroundComponent,
     SearchComponent,
-    ResourceComponent
+    ResourceComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
