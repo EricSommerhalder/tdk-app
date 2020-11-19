@@ -15,11 +15,23 @@ import {
 import {environment} from '../environments/environment';
 import {KnoraApiConnection} from '@dasch-swiss/dsp-js';
 import { PlaygroundComponent } from './playground/playground.component';
+import { SearchComponent } from './search/search.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatButtonModule} from '@angular/material/button';
+import { ResourceComponent } from './resource/resource.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlaygroundComponent
+    PlaygroundComponent,
+    SearchComponent,
+    ResourceComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +39,16 @@ import { PlaygroundComponent } from './playground/playground.component';
     DspCoreModule,
     DspViewerModule,
     DspSearchModule,
-    DspActionModule
+    DspActionModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    FormsModule,
+    MatSlideToggleModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule,
+    ReactiveFormsModule
   ],
   providers: [
     {
@@ -48,7 +69,8 @@ import { PlaygroundComponent } from './playground/playground.component';
       provide: DspApiConnectionToken,
       useFactory: (appInitService: AppInitService) => new KnoraApiConnection(appInitService.dspApiConfig), // AppInitService is passed to the factory method
       deps: [AppInitService] // depends on AppInitService
-    }
+    },
+    MatNativeDateModule
   ],
   bootstrap: [AppComponent]
 })
